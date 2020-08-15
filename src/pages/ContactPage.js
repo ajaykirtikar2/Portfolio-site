@@ -1,10 +1,111 @@
 import React from 'react';
 
-function ContactPage(props){
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
-        return(
-            <p>Contact page works!</p>
-        );
+import Hero from '../components/Hero';
+import Content from '../components/Content';
+import Axios from 'axios';
+
+class ContactPage extends React.Component{
+
+        constructor(props){
+            super(props);
+            this.state = {
+                name: "",
+                email: "",
+                message: "",
+                disabled: false,
+                emailSent: null,
+
+            }
+        }
+
+        handleChange = (event) =>{
+
+            const target = event.target;
+            const value = target.type === 'checkbox' ? target.checked : target.value;
+            const name = target.name;
+
+            this.setState({
+                [name]: value
+            })
+        }
+
+        /* preventing default behavior of refreshing the page */
+        handleSubmit = (event) => {
+            event.preventDefault();
+
+            console.log(event.target);
+
+            /*prevents from sending email more than once */
+            this.setState({
+                disabled: true,
+            });
+
+            
+            Axios.post('http://localhost:3030/api/email', this.state)
+                    .then(res => {
+                        console.log(res.status)
+                        if(res.status === 200){
+                            this.setState({
+                                disabled: true,
+                                emailSent: true
+                            });
+                        } else {
+                            this.setState({
+                                disabled: false,
+                                emailSent: false
+                            });
+                        }
+                        
+                    })
+                    .catch(err => {
+                        console.log(err);
+
+                        this.setState({
+                            disabled: false,
+                            emailSent: false
+                        });
+                    })
+        }
+
+        render() {
+            return(
+                <div>
+                    <Hero title = {this.props.title} text = {this.props.subtitle} />
+
+                    <Content>
+                        <Form onSubmit={this.handleSubmit}>
+                            <Form.Group>
+                                <Form.Label htmlFor= "full-name">Full Name</Form.Label>
+                                <Form.Control id="full-name" name="name" type="text" value={this.state.name} onChange={this.handleChange}/>
+                            </Form.Group>
+
+
+                            <Form.Group>
+                                <Form.Label htmlFor= "email">Email (Gmail, Hotmail, Outlook Supported)</Form.Label>
+                                <Form.Control id="email" name="email" type="email" value={this.state.email} onChange={this.handleChange}/>
+                            </Form.Group>
+
+                            <Form.Group>
+                                <Form.Label htmlFor= "message">Message</Form.Label>
+                                <Form.Control id="message" name="message" as="textarea" rows="3" value={this.state.message} onChange={this.handleChange}/>
+                            </Form.Group>
+
+                            <Button className="d-inline-block" variant="primary" type="submit" disabled={this.state.disabled}>
+                                Send
+                            </Button>
+
+
+                            {/* message to show whether email sent correctly */}
+                            {this.state.emailSent === true && <p className="d-inline success-msg">Email Sent!</p>}
+                            {this.state.emailSent === false && <p className="d-inline err-msg">Email Not Sent!</p>}
+                        </Form>
+                    </Content>
+                </div>
+            );
+        }
 
 }
 

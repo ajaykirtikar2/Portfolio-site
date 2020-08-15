@@ -9,11 +9,11 @@ function Footer(){
         <footer className="mt-5">
             <Container fluid={true}>
                 <Row className="border-top justify-content-between p-3">
-                    <Col className="p-0" small={12}>
+                    <Col className="p-1" small={12}>
                         Ajay Kirtikar
                     </Col>
                     <Col className="p-0 d-flex justify-content-end" md={5}>
-                        This site was made by Ajay Kirtikar.
+                        This site was made by Ajay Kirtikar 2020.
                     </Col>
                 </Row>
             </Container>

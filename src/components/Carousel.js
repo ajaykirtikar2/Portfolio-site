@@ -36,7 +36,7 @@ class Carousel extends React.Component{
                     title: 'This Website',
                     subtitle: '(2020) How this site was made using React.',
                     imgSrc: website,
-                    link: '',
+                    link: 'https://github.com/ajaykirtikar2/Portfolio-site',
                     selected: false
                 },
 
