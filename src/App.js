@@ -51,21 +51,22 @@ class App extends React.Component{
           <Navbar className="border-bottom" bg="transparent" expand='xl' >
             <Navbar.Brand href="/">Ajay Kirtikar</Navbar.Brand>
 
-            <Navbar.Brand href='/resume' > <a href = {process.env.PUBLIC_URL + Pdf}>Resume</a></Navbar.Brand>
+            <Navbar.Brand> <a href = {process.env.PUBLIC_URL + Pdf}>Resume</a></Navbar.Brand>
 
             <Navbar.Toggle className="border-0" aria-controls="navbar-toggle"/>
             <Navbar.Collapse id="navbar-toggle">
               <Nav className="ml-auto">
                 <Link className="nav-link" to="/">Home</Link>
                 <Link className="nav-link" to="/about">About</Link>
-                <Link className="nav-link" to="/contact">Contact</Link>
+                {/*<Link className="nav-link" to="/contact">Contact</Link> */}
               </Nav>
             </Navbar.Collapse>
           </Navbar>
 
           <Route path="/" exact render={()=> <HomePage title={this.state.home.title} subtitle = {this.state.home.subtitle} text={this.state.home.text} />} />
           <Route path="/about"  render={() => <AboutPage title={this.state.about.title} />} />
-          <Route path="/contact"  render={() => <ContactPage title={this.state.contact.title} subtitle = {this.state.contact.subtitle} />} />
+
+          {/* <Route path="/contact"  render={() => <ContactPage title={this.state.contact.title} subtitle = {this.state.contact.subtitle} />} /> */}
 
           <Footer/>
 
