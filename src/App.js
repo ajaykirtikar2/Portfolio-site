@@ -46,7 +46,7 @@ class App extends React.Component{
   render(){
     return (
       <Router> 
-        <Container className="p-0" fluid={true}>
+        <Container className="p-0" fluid= {true}>
 
           <Navbar className="border-bottom" bg="transparent" expand='xl' >
             <Navbar.Brand href="/">Ajay Kirtikar</Navbar.Brand>
@@ -55,7 +55,8 @@ class App extends React.Component{
 
             <Navbar.Toggle className="border-0" aria-controls="navbar-toggle"/>
             <Navbar.Collapse id="navbar-toggle">
-              <Nav className="ml-auto">
+              {/* right nav bar links */}
+              <Nav className="ml-auto" fluid = {true}>
                 <Link className="nav-link" to="/">Home</Link>
                 <Link className="nav-link" to="/about">About</Link>
                 {/*<Link className="nav-link" to="/contact">Contact</Link> */}
