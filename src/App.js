@@ -8,7 +8,7 @@ import './App.css';
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 import AboutPage from './pages/AboutPage'
-import ContactPage from './pages/ContactPage'
+//import ContactPage from './pages/ContactPage'
 
 import Pdf from '../src/assets/documents/Resume2020.pdf';
 
