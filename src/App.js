@@ -27,7 +27,7 @@ class App extends React.Component{
         { title: 'Contact', path:'/contact' },
       ],
       home: {
-        title: 'Welcome.',
+        title: 'Welcome. ',
         subtitle: 'Check out my projects below',
         text: 'I am a rising senior pursuing a B.S degree in Computer Science at The Ohio State University '
       },
@@ -35,6 +35,7 @@ class App extends React.Component{
         title: 'About Me.',
        
       },
+      // currently working on email system, in progress
       contact: {
         title: 'Let\'s Talk.',
         subtitle: 'Fill out the form to send me an email regarding any questions/comments'
