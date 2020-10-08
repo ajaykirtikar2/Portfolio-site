@@ -41,8 +41,14 @@ code {
 }
 
 .a-about-text{
-  font-size: 20px;
+  font-size: 22px;
 
+}
+.h-description-text{
+  font-size: 22px;
+}
+.h-subdescription-text{
+  font-size: 25px;
 }
 
 .success-msg{

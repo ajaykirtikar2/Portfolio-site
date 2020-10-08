@@ -28,8 +28,8 @@ class App extends React.Component{
       ],
       home: {
         title: 'Welcome. ',
-        subtitle: 'Check out my projects below',
-        text: 'I am a rising senior pursuing a B.S degree in Computer Science at The Ohio State University '
+        //subtitle: 'I am a rising senior pursuing a B.S degree in Computer Science at The Ohio State University ',
+        text: 'Check out my projects below'
       },
       about: {
         title: 'About Me.',
@@ -49,7 +49,7 @@ class App extends React.Component{
       <Router> 
         <Container className="p-0" fluid= {true}>
 
-          <Navbar className="border-bottom" bg="transparent" expand='xl' >
+          <Navbar className="border-bottom font-weight-light" bg="transparent" expand='xl' >
             <Navbar.Brand href="/">Ajay Kirtikar</Navbar.Brand>
 
             <Navbar.Brand> <a href = {process.env.PUBLIC_URL + Pdf}>Resume</a></Navbar.Brand>
