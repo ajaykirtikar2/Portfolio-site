@@ -13,7 +13,7 @@ function Footer(){
                         Ajay Kirtikar
                     </Col>
                     <Col className="p-0 d-flex justify-content-end font-weight-light" md={5}>
-                        This site was made by Ajay Kirtikar 2020.
+                        Made by Ajay Kirtikar 2020.
                     </Col>
                 </Row>
             </Container>
